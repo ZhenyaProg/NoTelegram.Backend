@@ -1,3 +1,3 @@
-@NoTelegram.API_HostAddress = http://localhost:5250
+@NoTelegram.API_HostAddress = https://localhost:7023
 
 ###

@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35004.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoTelegram.API", "NoTelegram.API.csproj", "{598594D9-8C01-4C4C-A176-A70509951589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoTelegram.API", "NoTelegram.API.csproj", "{598594D9-8C01-4C4C-A176-A70509951589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoTelegram.Application", "..\NoTelegram.Application\NoTelegram.Application.csproj", "{BBD88C4D-6B71-4A96-846B-A93FF076CECD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoTelegram.Application", "..\NoTelegram.Application\NoTelegram.Application.csproj", "{BBD88C4D-6B71-4A96-846B-A93FF076CECD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoTelegram.Core", "..\NoTelegram.Core\NoTelegram.Core.csproj", "{C62113D0-4B96-4EF3-8A40-B6999380E74C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoTelegram.Core", "..\NoTelegram.Core\NoTelegram.Core.csproj", "{C62113D0-4B96-4EF3-8A40-B6999380E74C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoTelegram.DataAccess.PostgreSQL", "..\NoTelegram.DataAccess.PostgreSQL\NoTelegram.DataAccess.PostgreSQL.csproj", "{1582B76B-44E3-42CE-A38F-85F17806D856}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoTelegram.DataAccess.PostgreSQL", "..\NoTelegram.DataAccess.PostgreSQL\NoTelegram.DataAccess.PostgreSQL.csproj", "{1582B76B-44E3-42CE-A38F-85F17806D856}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoTelegram.Infrastructure", "..\NoTelegram.Infrastructure\NoTelegram.Infrastructure.csproj", "{A6AE9FA9-1998-42E5-8D69-1314CB429E37}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1582B76B-44E3-42CE-A38F-85F17806D856}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1582B76B-44E3-42CE-A38F-85F17806D856}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1582B76B-44E3-42CE-A38F-85F17806D856}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6AE9FA9-1998-42E5-8D69-1314CB429E37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6AE9FA9-1998-42E5-8D69-1314CB429E37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6AE9FA9-1998-42E5-8D69-1314CB429E37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6AE9FA9-1998-42E5-8D69-1314CB429E37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
