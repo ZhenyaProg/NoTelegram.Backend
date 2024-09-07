@@ -29,7 +29,9 @@ namespace NoTelegram.Application.Services
 
         public async Task<Result<Users>> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            Users? user = await _usersRepository.GetById(id);
+            return user == null ? Result.Failure<Users>("Нет пользователя с таким id")
+                                : Result.Success(user);
         }
 
         public async Task<Result> LogOut(Guid id)

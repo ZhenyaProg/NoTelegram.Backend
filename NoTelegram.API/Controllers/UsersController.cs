@@ -3,6 +3,7 @@ using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using NoTelegram.API.Contracts;
+using NoTelegram.API.Filters;
 using NoTelegram.Core.Services;
 using IResult = Microsoft.AspNetCore.Http.IResult;
 
@@ -67,6 +68,12 @@ namespace NoTelegram.API.Controllers
             return Results.Ok();
         }
 
-        
+        [HttpDelete]
+        [Route("session")]
+        [TypeFilter(typeof(AuthFilter))]
+        public async Task<IResult> LogOut()
+        {
+            return Results.Ok();
+        }
     }
 }

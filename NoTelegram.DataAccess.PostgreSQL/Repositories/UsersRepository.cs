@@ -46,9 +46,13 @@ namespace NoTelegram.DataAccess.PostgreSQL.Repositories
             return new Users(userEntity.Id, userEntity.UserName, userEntity.Password, userEntity.Email);
         }
 
-        public Task<Users?> GetById(Guid id)
+        public async Task<Users?> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            var userEntity = await _dbContext.Users
+               .AsNoTracking()
+               .FirstOrDefaultAsync(user => user.Id == id);
+            if (userEntity is null) return null;
+            return new Users(userEntity.Id, userEntity.UserName, userEntity.Password, userEntity.Email);
         }
     }
 }
