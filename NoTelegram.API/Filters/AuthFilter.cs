@@ -15,20 +15,17 @@ namespace NoTelegram.API.Filters
 
         public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
-            if (!context.HttpContext.Request.Headers.ContainsKey("auth-id"))
+            if (!context.HttpContext.Request.Cookies.ContainsKey("auth-id"))
             {
                 context.Result = new UnauthorizedResult();
                 return;
             }
 
-            Guid id = Guid.Parse(context.HttpContext.Request.Headers["auth-id"]);
+            Guid id = Guid.Parse(context.HttpContext.Request.Cookies["auth-id"]);
 
             var getResult = await _usersService.GetById(id);
             if(getResult.IsFailure)
-            {
-                context.HttpContext.Response.StatusCode = StatusCodes.Status401Unauthorized;
-                await context.HttpContext.Response.WriteAsync(getResult.Error);
-            }
+                context.Result = new UnauthorizedResult();
         }
     }
 }

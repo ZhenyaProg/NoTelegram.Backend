@@ -28,6 +28,13 @@ namespace NoTelegram.DataAccess.PostgreSQL.Repositories
             await _dbContext.SaveChangesAsync();
         }
 
+        public async Task Delete(Guid id)
+        {
+            await _dbContext.Users
+            .Where(user => user.Id == id)
+            .ExecuteDeleteAsync();
+        }
+
         public async Task<Users?> GetByEmail(string email)
         {
             var userEntity = await _dbContext.Users
@@ -53,6 +60,15 @@ namespace NoTelegram.DataAccess.PostgreSQL.Repositories
                .FirstOrDefaultAsync(user => user.Id == id);
             if (userEntity is null) return null;
             return new Users(userEntity.Id, userEntity.UserName, userEntity.Password, userEntity.Email);
+        }
+
+        public async Task Update(Guid id, string userName, string email)
+        {
+            await _dbContext.Users
+                .Where(user => user.Id == id)
+                .ExecuteUpdateAsync(s => s
+                    .SetProperty(user => user.UserName, userName)
+                    .SetProperty(s => s.Email, email));
         }
     }
 }

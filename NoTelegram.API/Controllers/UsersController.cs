@@ -1,4 +1,6 @@
-﻿using CSharpFunctionalExtensions;
+﻿using Azure;
+using Azure.Core;
+using CSharpFunctionalExtensions;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
@@ -15,15 +17,18 @@ namespace NoTelegram.API.Controllers
     {
         private readonly IValidator<RegisterUserRequest> _registerUserValidator;
         private readonly IValidator<LoginUserRequest> _loginUserValidator;
+        private readonly IValidator<EditUserRequest> _editUserValidator;
         private readonly IUsersService _usersService;
 
         public UsersController(
             IValidator<RegisterUserRequest> registerUserValidator,
             IValidator<LoginUserRequest> loginUserValidator,
+            IValidator<EditUserRequest> editUserValidator,
             IUsersService usersService)
         {
             _registerUserValidator = registerUserValidator;
             _loginUserValidator = loginUserValidator;
+            _editUserValidator = editUserValidator;
             _usersService = usersService;
         }
 
@@ -59,11 +64,10 @@ namespace NoTelegram.API.Controllers
 
             Result<Guid> loginResult = await _usersService.LogIn(request.LoginType, request.Login, request.Password);
             if (loginResult.IsFailure)
-            {
                 return Results.BadRequest(loginResult.Error);
-            }
 
-            Response.Headers.Add("auth-id", loginResult.Value.ToString());
+            Response.Cookies.Append("auth-id", loginResult.Value.ToString());
+
 
             return Results.Ok();
         }
@@ -71,8 +75,63 @@ namespace NoTelegram.API.Controllers
         [HttpDelete]
         [Route("session")]
         [TypeFilter(typeof(AuthFilter))]
-        public async Task<IResult> LogOut()
+        public async Task<IResult> LogOut([FromHeader] Guid id)
         {
+            Result logoutResult = await _usersService.LogOut(id);
+            if (logoutResult.IsFailure)
+                return Results.BadRequest(logoutResult.Error);
+
+            Response.Cookies.Delete("auth-id");
+
+            return Results.Ok();
+        }
+
+        [HttpGet]
+        [Route("data")]
+        [TypeFilter(typeof(AuthFilter))]
+        public async Task<IResult> GetUserData([FromHeader] Guid id)
+        {
+            var getResult = await _usersService.GetById(id);
+            if (getResult.IsFailure)
+                return Results.BadRequest(getResult.Error);
+
+            UserDataResponse response = new UserDataResponse()
+            {
+                UserName = getResult.Value.UserName,
+                Email = getResult.Value.Email,
+            };
+
+            return Results.Ok(response);
+        }
+
+        [HttpDelete]
+        [Route("")]
+        [TypeFilter(typeof(AuthFilter))]
+        public async Task<IResult> DeleteUser([FromHeader] Guid id)
+        {
+            var getResult = await _usersService.DeleteUser(id);
+            if (getResult.IsFailure)
+                return Results.BadRequest(getResult.Error);
+
+            return Results.Ok();
+        }
+
+        [HttpPut]
+        [Route("edit")]
+        [TypeFilter(typeof(AuthFilter))]
+        public async Task<IResult> EditUser([FromHeader] Guid id, [FromBody] EditUserRequest request)
+        {
+            ValidationResult validationResult = _editUserValidator.Validate(request);
+            if (validationResult.IsValid is not true)
+            {
+                var errors = validationResult.ToDictionary();
+                return Results.BadRequest(errors.Values);
+            }
+
+            Result editResult = await _usersService.EditUser(id, request.UserName, request.Email);
+            if(editResult.IsFailure)
+                return Results.BadRequest(editResult.Error);
+
             return Results.Ok();
         }
     }

@@ -19,12 +19,23 @@ namespace NoTelegram.Application.Services
 
         public async Task<Result> DeleteUser(Guid id)
         {
-            throw new NotImplementedException();
+            Result<Users> getResult = await GetById(id);
+            if(getResult.IsFailure)
+                return Result.Failure(getResult.Error);
+
+            await _usersRepository.Delete(id);
+
+            return Result.Success();
         }
 
-        public async Task<Result> EditUser(Guid id, string userName, string password, string email)
+        public async Task<Result> EditUser(Guid id, string userName, string email)
         {
-            throw new NotImplementedException();
+            Result<Users> getResult = await GetById(id);
+            if (getResult.IsFailure)
+                return Result.Failure(getResult.Error);
+
+            await _usersRepository.Update(id, userName, email);
+            return Result.Success();
         }
 
         public async Task<Result<Users>> GetById(Guid id)
@@ -36,7 +47,11 @@ namespace NoTelegram.Application.Services
 
         public async Task<Result> LogOut(Guid id)
         {
-            throw new NotImplementedException();
+            var getResult = await GetById(id);
+            if(getResult.IsFailure)
+                return Result.Failure(getResult.Error);
+
+            return Result.Success();
         }
 
         public async Task<Result> Register(string userName, string password, string email)

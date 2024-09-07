@@ -3,10 +3,6 @@
   "WorkspaceRootPath": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.api\\filters\\authfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|solutionrelative:filters\\authfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,8 +13,29 @@
       "AbsoluteMoniker": "D:0:0:{1582B76B-44E3-42CE-A38F-85F17806D856}|..\\NoTelegram.DataAccess.PostgreSQL\\NoTelegram.DataAccess.PostgreSQL.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.dataaccess.postgresql\\repositories\\usersrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C62113D0-4B96-4EF3-8A40-B6999380E74C}|..\\NoTelegram.Core\\NoTelegram.Core.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.core\\services\\iusersservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C62113D0-4B96-4EF3-8A40-B6999380E74C}|..\\NoTelegram.Core\\NoTelegram.Core.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.core\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.api\\contracts\\edituserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|solutionrelative:contracts\\edituserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.api\\contracts\\registeruserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|solutionrelative:contracts\\registeruserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A6AE9FA9-1998-42E5-8D69-1314CB429E37}|..\\NoTelegram.Infrastructure\\NoTelegram.Infrastructure.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.infrastructure\\passwordhasher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.api\\contracts\\userdataresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|solutionrelative:contracts\\userdataresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,34 +45,99 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Users.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Core\\Models\\Users.cs",
+              "RelativeDocumentMoniker": "..\\NoTelegram.Core\\Models\\Users.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Core\\Models\\Users.cs",
+              "RelativeToolTip": "..\\NoTelegram.Core\\Models\\Users.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T18:44:01.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUsersService.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Core\\Services\\IUsersService.cs",
+              "RelativeDocumentMoniker": "..\\NoTelegram.Core\\Services\\IUsersService.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Core\\Services\\IUsersService.cs",
+              "RelativeToolTip": "..\\NoTelegram.Core\\Services\\IUsersService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T18:41:58.292Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "EditUserRequest.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Contracts\\EditUserRequest.cs",
+              "RelativeDocumentMoniker": "Contracts\\EditUserRequest.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Contracts\\EditUserRequest.cs",
+              "RelativeToolTip": "Contracts\\EditUserRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T18:38:44.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterUserRequest.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Contracts\\RegisterUserRequest.cs",
+              "RelativeDocumentMoniker": "Contracts\\RegisterUserRequest.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Contracts\\RegisterUserRequest.cs",
+              "RelativeToolTip": "Contracts\\RegisterUserRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T18:38:20.174Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PasswordHasher.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Infrastructure\\PasswordHasher.cs",
+              "RelativeDocumentMoniker": "..\\NoTelegram.Infrastructure\\PasswordHasher.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Infrastructure\\PasswordHasher.cs",
+              "RelativeToolTip": "..\\NoTelegram.Infrastructure\\PasswordHasher.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T12:36:20.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "UsersRepository.cs",
               "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\UsersRepository.cs",
               "RelativeDocumentMoniker": "..\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\UsersRepository.cs",
               "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\UsersRepository.cs",
               "RelativeToolTip": "..\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\UsersRepository.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAwwDIAAAAzAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAAAcwEYAAAA3AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-07T09:26:55.675Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "UsersService.cs",
               "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Application\\Services\\UsersService.cs",
               "RelativeDocumentMoniker": "..\\NoTelegram.Application\\Services\\UsersService.cs",
               "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Application\\Services\\UsersService.cs",
               "RelativeToolTip": "..\\NoTelegram.Application\\Services\\UsersService.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAgwCEAAAA3AAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowCUAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-07T09:09:28.764Z",
               "EditorCaption": ""
@@ -63,38 +145,37 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AuthFilter.cs",
-              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Filters\\AuthFilter.cs",
-              "RelativeDocumentMoniker": "Filters\\AuthFilter.cs",
-              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Filters\\AuthFilter.cs",
-              "RelativeToolTip": "Filters\\AuthFilter.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAcAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-07T09:00:30.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "UsersController.cs",
               "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
               "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Controllers\\UsersController.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAqwEgAAAAlAAAA",
+              "ViewState": "AQIAAHAAAAAAAAAAAAAowHoAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-07T08:58:19.87Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
+              "Title": "UserDataResponse.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Contracts\\UserDataResponse.cs",
+              "RelativeDocumentMoniker": "Contracts\\UserDataResponse.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Contracts\\UserDataResponse.cs",
+              "RelativeToolTip": "Contracts\\UserDataResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-07T12:26:00.719Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwA0AAAABAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAwwBgAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-06T11:28:12.071Z",
               "EditorCaption": ""

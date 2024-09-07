@@ -21,6 +21,7 @@ internal class Program
 
         builder.Services.AddTransient<IValidator<RegisterUserRequest>, RegisterUserRequestValidator>();
         builder.Services.AddTransient<IValidator<LoginUserRequest>, LoginUserRequestValidator>();
+        builder.Services.AddTransient<IValidator<EditUserRequest>, EditUserRequestValidator>();
 
         builder.Services.AddTransient<IUsersService, UsersService>();
         builder.Services.AddTransient<IUsersRepository, UsersRepository>();

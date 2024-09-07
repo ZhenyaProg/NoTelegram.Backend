@@ -1,0 +1,17 @@
+[33mcommit 65e5ac18424b0712f2b9518e67102d45a86ad6dd[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m
+Author: Zhenya <schoolbast@mail.ru>
+Date:   Sat Sep 7 13:34:16 2024 +0300
+
+    add authentication filter
+
+[33mcommit 3138af579c9865d89f863993d94f94692fa62556[m
+Author: Zhenya <schoolbast@mail.ru>
+Date:   Sat Sep 7 11:43:55 2024 +0300
+
+    Added register and login
+
+[33mcommit 56283ed0f6a4d6cb3b9fb81e93c5fce7963d7daa[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Zhenya <schoolbast@mail.ru>
+Date:   Fri Sep 6 15:24:31 2024 +0300
+
+    initial commit
