@@ -5,7 +5,8 @@ using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
 using NoTelegram.API.Contracts;
-using NoTelegram.API.Filters;
+using NoTelegram.API.Filters.Auth;
+using NoTelegram.Core.Models;
 using NoTelegram.Core.Services;
 using IResult = Microsoft.AspNetCore.Http.IResult;
 
@@ -68,13 +69,12 @@ namespace NoTelegram.API.Controllers
 
             Response.Cookies.Append("auth-id", loginResult.Value.ToString());
 
-
             return Results.Ok();
         }
 
         [HttpDelete]
         [Route("session")]
-        [TypeFilter(typeof(AuthFilter))]
+        [TypeFilter(typeof(StandartAuthFilter))]
         public async Task<IResult> LogOut([FromHeader] Guid id)
         {
             Result logoutResult = await _usersService.LogOut(id);
@@ -87,18 +87,39 @@ namespace NoTelegram.API.Controllers
         }
 
         [HttpGet]
-        [Route("data")]
-        [TypeFilter(typeof(AuthFilter))]
-        public async Task<IResult> GetUserData([FromHeader] Guid id)
+        [Route("data/{userId:guid}")]
+        public async Task<IResult> GetUserData(Guid userId)
         {
-            var getResult = await _usersService.GetById(id);
+            var getResult = await _usersService.GetByUserId(userId);
             if (getResult.IsFailure)
                 return Results.BadRequest(getResult.Error);
 
             UserDataResponse response = new UserDataResponse()
             {
+                UserId = getResult.Value.UserId,
                 UserName = getResult.Value.UserName,
                 Email = getResult.Value.Email,
+                Authenticated = getResult.Value.Authenticated
+            };
+
+            return Results.Ok(response);
+        }
+
+        [HttpGet]
+        [Route("data")]
+        [TypeFilter(typeof(AuthFilterWithTimeCheck))]
+        public async Task<IResult> GetPersonallyUserData([FromHeader] Guid securityId)
+        {
+            var getResult = await _usersService.GetBySecurityId(securityId);
+            if (getResult.IsFailure)
+                return Results.BadRequest(getResult.Error);
+
+            UserDataResponse response = new UserDataResponse()
+            {
+                UserId = getResult.Value.UserId,
+                UserName = getResult.Value.UserName,
+                Email = getResult.Value.Email,
+                Authenticated = getResult.Value.Authenticated
             };
 
             return Results.Ok(response);
@@ -106,7 +127,7 @@ namespace NoTelegram.API.Controllers
 
         [HttpDelete]
         [Route("")]
-        [TypeFilter(typeof(AuthFilter))]
+        [TypeFilter(typeof(AuthFilterWithTimeCheck))]
         public async Task<IResult> DeleteUser([FromHeader] Guid id)
         {
             var getResult = await _usersService.DeleteUser(id);
@@ -117,8 +138,8 @@ namespace NoTelegram.API.Controllers
         }
 
         [HttpPut]
-        [Route("edit")]
-        [TypeFilter(typeof(AuthFilter))]
+        [Route("data")]
+        [TypeFilter(typeof(AuthFilterWithTimeCheck))]
         public async Task<IResult> EditUser([FromHeader] Guid id, [FromBody] EditUserRequest request)
         {
             ValidationResult validationResult = _editUserValidator.Validate(request);
