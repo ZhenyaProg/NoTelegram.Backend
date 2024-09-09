@@ -19,7 +19,7 @@ namespace NoTelegram.Application.Services
 
         public async Task<Result> DeleteUser(Guid id)
         {
-            Result<Users> getResult = await GetById(id);
+            Result<Users> getResult = await GetBySecurityId(id);
             if(getResult.IsFailure)
                 return Result.Failure(getResult.Error);
 
@@ -30,7 +30,7 @@ namespace NoTelegram.Application.Services
 
         public async Task<Result> EditUser(Guid id, string userName, string email)
         {
-            Result<Users> getResult = await GetById(id);
+            Result<Users> getResult = await GetBySecurityId(id);
             if (getResult.IsFailure)
                 return Result.Failure(getResult.Error);
 
@@ -38,18 +38,27 @@ namespace NoTelegram.Application.Services
             return Result.Success();
         }
 
-        public async Task<Result<Users>> GetById(Guid id)
+        public async Task<Result<Users>> GetBySecurityId(Guid id)
         {
-            Users? user = await _usersRepository.GetById(id);
+            Users? user = await _usersRepository.GetBySecurityId(id);
+            return user == null ? Result.Failure<Users>("Нет пользователя с таким id")
+                                : Result.Success(user);
+        }
+
+        public async Task<Result<Users>> GetByUserId(Guid id)
+        {
+            Users? user = await _usersRepository.GetByUserId(id);
             return user == null ? Result.Failure<Users>("Нет пользователя с таким id")
                                 : Result.Success(user);
         }
 
         public async Task<Result> LogOut(Guid id)
         {
-            var getResult = await GetById(id);
+            var getResult = await GetBySecurityId(id);
             if(getResult.IsFailure)
                 return Result.Failure(getResult.Error);
+
+            await _usersRepository.LogOut(id);
 
             return Result.Success();
         }
@@ -65,7 +74,14 @@ namespace NoTelegram.Application.Services
             
             {
                 string hashedPassword = _passwordHasher.Generate(password);
-                Users user = new Users(Guid.NewGuid(), userName, hashedPassword, email);
+                Users user = new Users
+                {
+                    SecurityId = Guid.NewGuid(),
+                    UserId = Guid.NewGuid(),
+                    UserName = userName,
+                    PasswordHashed = hashedPassword,
+                    Email = email
+                };
 
                 await _usersRepository.Add(user);
             }
@@ -89,7 +105,9 @@ namespace NoTelegram.Application.Services
             if(verify is false)
                 return Result.Failure<Guid>("неверный пароль");
 
-            return users.Id;
+            await _usersRepository.LogIn(users.SecurityId);
+
+            return users.SecurityId;
         }
     }
 }

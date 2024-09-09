@@ -8,7 +8,7 @@ namespace NoTelegram.DataAccess.PostgreSQL.Configuractions
     {
         public void Configure(EntityTypeBuilder<UsersEntity> builder)
         {
-            builder.HasKey(user => user.Id);
+            builder.HasKey(user => user.SecurityId);
         }
     }
 }

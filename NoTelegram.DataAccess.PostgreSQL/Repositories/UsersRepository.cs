@@ -18,7 +18,8 @@ namespace NoTelegram.DataAccess.PostgreSQL.Repositories
         {
             UsersEntity usersEntity = new UsersEntity()
             {
-                Id = users.Id,
+                SecurityId = users.SecurityId,
+                UserId = users.UserId,
                 UserName = users.UserName,
                 Email = users.Email,
                 Password = users.PasswordHashed
@@ -31,7 +32,7 @@ namespace NoTelegram.DataAccess.PostgreSQL.Repositories
         public async Task Delete(Guid id)
         {
             await _dbContext.Users
-            .Where(user => user.Id == id)
+            .Where(user => user.SecurityId == id)
             .ExecuteDeleteAsync();
         }
 
@@ -41,7 +42,7 @@ namespace NoTelegram.DataAccess.PostgreSQL.Repositories
                 .AsNoTracking()
                 .FirstOrDefaultAsync(user => user.Email == email);
             if(userEntity is null) return null;
-            return new Users(userEntity.Id, userEntity.UserName, userEntity.Password, userEntity.Email);
+            return CreateUser(userEntity);
         }
 
         public async Task<Users?> GetByName(string name)
@@ -50,25 +51,65 @@ namespace NoTelegram.DataAccess.PostgreSQL.Repositories
                 .AsNoTracking()
                 .FirstOrDefaultAsync(user => user.UserName == name);
             if (userEntity is null) return null;
-            return new Users(userEntity.Id, userEntity.UserName, userEntity.Password, userEntity.Email);
+            return CreateUser(userEntity);
         }
 
-        public async Task<Users?> GetById(Guid id)
+        public async Task<Users?> GetBySecurityId(Guid id)
         {
             var userEntity = await _dbContext.Users
                .AsNoTracking()
-               .FirstOrDefaultAsync(user => user.Id == id);
+               .FirstOrDefaultAsync(user => user.SecurityId == id);
             if (userEntity is null) return null;
-            return new Users(userEntity.Id, userEntity.UserName, userEntity.Password, userEntity.Email);
+            return CreateUser(userEntity);
+        }
+
+        public async Task<Users?> GetByUserId(Guid id)
+        {
+            var userEntity = await _dbContext.Users
+               .AsNoTracking()
+               .FirstOrDefaultAsync(user => user.UserId == id);
+            if (userEntity is null) return null;
+            return CreateUser(userEntity);
+        }
+
+        public async Task LogIn(Guid securityId)
+        {
+            await _dbContext.Users
+                .Where(user => user.SecurityId == securityId)
+                .ExecuteUpdateAsync(s => s
+                    .SetProperty(user => user.Authenticated, true)
+                    .SetProperty(s => s.AuthDate, DateTime.Now));
+        }
+
+        public async Task LogOut(Guid securityId)
+        {
+            await _dbContext.Users
+               .Where(user => user.SecurityId == securityId)
+               .ExecuteUpdateAsync(s => s
+                   .SetProperty(user => user.Authenticated, false));
         }
 
         public async Task Update(Guid id, string userName, string email)
         {
             await _dbContext.Users
-                .Where(user => user.Id == id)
+                .Where(user => user.SecurityId == id)
                 .ExecuteUpdateAsync(s => s
                     .SetProperty(user => user.UserName, userName)
                     .SetProperty(s => s.Email, email));
+        }
+
+        private Users CreateUser(UsersEntity usersEntity)
+        {
+            return new Users
+            {
+                SecurityId = usersEntity.SecurityId,
+                UserId = usersEntity.UserId,
+                UserName = usersEntity.UserName,
+                PasswordHashed = usersEntity.Password,
+                Email = usersEntity.Email,
+                Authenticated = usersEntity.Authenticated,
+                AuthDate = usersEntity.AuthDate
+            };
         }
     }
 }

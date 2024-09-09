@@ -6,10 +6,14 @@ namespace NoTelegram.Core.Repositories
     {
         Task Add(Users users);
         Task Delete(Guid id);
-        Task<Users?> GetById(Guid id);
+        Task<Users?> GetBySecurityId(Guid securityId);
+        Task<Users?> GetByUserId(Guid userId);
 
         Task<Users?> GetByEmail(string email);
         Task<Users?> GetByName(string name);
-        Task Update(Guid id, string userName, string email);
+        Task Update(Guid securityId, string userName, string email);
+
+        Task LogIn(Guid securityId);
+        Task LogOut(Guid securityId);
     }
 }

@@ -27,7 +27,12 @@ namespace NoTelegram.API.Filters.Auth
         public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
             foreach (var filter in _filters)
-                await filter(context);
+            {
+                if (context.Result is UnauthorizedResult)
+                    break;
+                else
+                    await filter(context);
+            }
         }
 
         protected async Task HeaderFilter(AuthorizationFilterContext context)
