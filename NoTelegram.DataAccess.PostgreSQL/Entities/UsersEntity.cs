@@ -9,5 +9,7 @@
         public string Email { get; set; } = string.Empty;
         public bool Authenticated { get; set; }
         public DateTime AuthDate { get; set; }
+
+        public List<ChatsEntity> Chats { get; set; } = [];
     }
 }

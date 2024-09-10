@@ -1,12 +1,9 @@
-﻿using Azure;
-using Azure.Core;
-using CSharpFunctionalExtensions;
+﻿using CSharpFunctionalExtensions;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Mvc;
-using NoTelegram.API.Contracts;
+using NoTelegram.API.Contracts.User;
 using NoTelegram.API.Filters.Auth;
-using NoTelegram.Core.Models;
 using NoTelegram.Core.Services;
 using IResult = Microsoft.AspNetCore.Http.IResult;
 
@@ -63,6 +60,9 @@ namespace NoTelegram.API.Controllers
                 return Results.BadRequest(errors.Values);
             }
 
+            if (Request.Cookies.ContainsKey("auth-id"))
+                await LogOut(Guid.Parse(Request.Cookies["auth-id"]));
+
             Result<Guid> loginResult = await _usersService.LogIn(request.LoginType, request.Login, request.Password);
             if (loginResult.IsFailure)
                 return Results.BadRequest(loginResult.Error);
@@ -74,7 +74,7 @@ namespace NoTelegram.API.Controllers
 
         [HttpDelete]
         [Route("session")]
-        [TypeFilter(typeof(StandartAuthFilter))]
+        [TypeFilter(typeof(AuthStandart))]
         public async Task<IResult> LogOut([FromHeader] Guid id)
         {
             Result logoutResult = await _usersService.LogOut(id);
@@ -107,7 +107,7 @@ namespace NoTelegram.API.Controllers
 
         [HttpGet]
         [Route("data")]
-        [TypeFilter(typeof(AuthFilterWithTimeCheck))]
+        [TypeFilter(typeof(AuthWithTime))]
         public async Task<IResult> GetPersonallyUserData([FromHeader] Guid securityId)
         {
             var getResult = await _usersService.GetBySecurityId(securityId);
@@ -127,7 +127,7 @@ namespace NoTelegram.API.Controllers
 
         [HttpDelete]
         [Route("")]
-        [TypeFilter(typeof(AuthFilterWithTimeCheck))]
+        [TypeFilter(typeof(AuthWithTime))]
         public async Task<IResult> DeleteUser([FromHeader] Guid id)
         {
             var getResult = await _usersService.DeleteUser(id);
@@ -139,7 +139,7 @@ namespace NoTelegram.API.Controllers
 
         [HttpPut]
         [Route("data")]
-        [TypeFilter(typeof(AuthFilterWithTimeCheck))]
+        [TypeFilter(typeof(AuthWithTime))]
         public async Task<IResult> EditUser([FromHeader] Guid id, [FromBody] EditUserRequest request)
         {
             ValidationResult validationResult = _editUserValidator.Validate(request);

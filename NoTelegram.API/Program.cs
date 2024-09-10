@@ -1,7 +1,7 @@
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using NoTelegram.API.Contracts;
-using NoTelegram.API.Validators;
+using NoTelegram.API.Contracts.User;
+using NoTelegram.API.Validators.User;
 using NoTelegram.Application.Services;
 using NoTelegram.Core.Auth;
 using NoTelegram.Core.Repositories;
@@ -25,6 +25,9 @@ internal class Program
 
         builder.Services.AddTransient<IUsersService, UsersService>();
         builder.Services.AddTransient<IUsersRepository, UsersRepository>();
+
+        builder.Services.AddTransient<IChatsService, ChatsService>();
+        builder.Services.AddTransient<IChatsRepository, ChatsRepository>();
 
         builder.Services.AddTransient<IPasswordHasher, PasswordHasher>();
 

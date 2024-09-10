@@ -2,9 +2,9 @@
 
 namespace NoTelegram.API.Filters.Auth
 {
-    public class StandartAuthFilter : BaseAuthFilter
+    public class AuthStandart : BaseAuthFilter
     {
-        public StandartAuthFilter(IUsersService usersService) : base(usersService) 
+        public AuthStandart(IUsersService usersService) : base(usersService) 
         {
             Use(HeaderFilter);
             Use(UserIdFilter);

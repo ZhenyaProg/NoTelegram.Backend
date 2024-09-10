@@ -2,9 +2,9 @@
 
 namespace NoTelegram.API.Filters.Auth
 {
-    public class AuthFilterWithTimeCheck : BaseAuthFilter
+    public class AuthWithTime : BaseAuthFilter
     {
-        public AuthFilterWithTimeCheck(IUsersService usersService) : base(usersService)
+        public AuthWithTime(IUsersService usersService) : base(usersService)
         {
             Use(HeaderFilter);
             Use(UserIdFilter);

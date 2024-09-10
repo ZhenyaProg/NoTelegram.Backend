@@ -53,7 +53,7 @@ namespace NoTelegram.API.Filters.Auth
         protected async Task UserAuthTimeFilter(AuthorizationFilterContext context)
         {
             var getResult = await GetUser(context);
-            if (!getResult.Value.Authenticated || DateTime.Now - getResult.Value.AuthDate > TimeSpan.FromMinutes(1))
+            if (!getResult.Value.Authenticated || DateTime.Now - getResult.Value.AuthDate > TimeSpan.FromMinutes(10))
                 context.Result = new UnauthorizedResult();
         }
 

@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
-using NoTelegram.API.Contracts;
+using NoTelegram.API.Contracts.User;
 using NoTelegram.Core.Models;
 
-namespace NoTelegram.API.Validators
+namespace NoTelegram.API.Validators.User
 {
     public class EditUserRequestValidator : AbstractValidator<EditUserRequest>
     {

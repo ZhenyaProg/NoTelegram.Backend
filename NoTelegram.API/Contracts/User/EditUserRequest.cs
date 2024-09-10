@@ -1,4 +1,4 @@
-﻿namespace NoTelegram.API.Contracts
+﻿namespace NoTelegram.API.Contracts.User
 {
     public class EditUserRequest
     {

@@ -26,4 +26,8 @@
     <ProjectReference Include="..\NoTelegram.Infrastructure\NoTelegram.Infrastructure.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Validators\Chat\" />
+  </ItemGroup>
+
 </Project>

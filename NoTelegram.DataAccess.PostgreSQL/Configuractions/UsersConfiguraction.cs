@@ -9,6 +9,10 @@ namespace NoTelegram.DataAccess.PostgreSQL.Configuractions
         public void Configure(EntityTypeBuilder<UsersEntity> builder)
         {
             builder.HasKey(user => user.SecurityId);
+
+            builder
+                .HasMany(user => user.Chats)
+                .WithMany(chat => chat.Interlocutors);
         }
     }
 }
