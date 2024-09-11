@@ -13,11 +13,13 @@ namespace NoTelegram.DataAccess.PostgreSQL
 
         public DbSet<UsersEntity> Users { get; set; }
         public DbSet<ChatsEntity> Chats { get; set; }
+        public DbSet<MessagesEntity> Messages { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsersConfiguraction());
             modelBuilder.ApplyConfiguration(new ChatsConfiguraction());
+            modelBuilder.ApplyConfiguration(new MessagesConfiguraction());
 
             base.OnModelCreating(modelBuilder);
         }

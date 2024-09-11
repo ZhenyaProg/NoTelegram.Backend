@@ -1,5 +1,6 @@
 ﻿
 using CSharpFunctionalExtensions;
+using NoTelegram.Core.Models;
 
 namespace NoTelegram.Core.Services
 {
@@ -9,6 +10,6 @@ namespace NoTelegram.Core.Services
         Task<Result> CreateGroup(Guid creatorId, Guid[] interlocutorsId, string name, string accessType);
         Task<Result> CreateChannel(Guid creatorId, string chatName, string accesType);
         Task<Result> SendMessage(Guid securityId, Guid chatId, string messageType, string message);
-        Task ReadMessages(Guid securityId, Guid chatId, int pageNumber, int pageSize);
+        Task<Result<List<Messages>>> ReadMessages(Guid securityId, Guid chatId, int pageNumber, int pageSize);
     }
 }

@@ -29,6 +29,9 @@ internal class Program
         builder.Services.AddTransient<IChatsService, ChatsService>();
         builder.Services.AddTransient<IChatsRepository, ChatsRepository>();
 
+        builder.Services.AddTransient<IMessagesService, MessagesService>();
+        builder.Services.AddTransient<IMessagesRepository, MessagesRepository>();
+
         builder.Services.AddTransient<IPasswordHasher, PasswordHasher>();
 
         AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);

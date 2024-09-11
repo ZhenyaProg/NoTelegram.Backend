@@ -23,7 +23,6 @@ namespace NoTelegram.API.Filters.Auth
             _filters.Add(filter);
         }
 
-        //TODO: придумать архитектуру, при которой не будет дубляжа в фильтрах
         public async Task OnAuthorizationAsync(AuthorizationFilterContext context)
         {
             foreach (var filter in _filters)

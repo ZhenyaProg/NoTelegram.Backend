@@ -12,7 +12,5 @@ namespace NoTelegram.Core.Services
         Task<Result<Users>> GetByUserId(Guid id);
         Task<Result> EditUser(Guid id, string userName, string email);
         Task<Result> DeleteUser(Guid id);
-
-        //TODO: сделать кастомный класс результата. Это даст возможность через switch проверять его в контроллере
     }
 }

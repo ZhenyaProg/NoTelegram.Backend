@@ -9,11 +9,13 @@ namespace NoTelegram.Application.Services
     {
         private readonly IUsersService _usersService;
         private readonly IChatsRepository _chatsRepository;
+        private readonly IMessagesService _messagesService;
 
-        public ChatsService(IUsersService usersService, IChatsRepository chatsRepository)
+        public ChatsService(IUsersService usersService, IChatsRepository chatsRepository, IMessagesService messagesService)
         {
             _usersService = usersService;
             _chatsRepository = chatsRepository;
+            _messagesService = messagesService;
         }
 
         public async Task<Result> CreatePersonally(Guid creatorId, Guid interlocutorId)
@@ -44,6 +46,7 @@ namespace NoTelegram.Application.Services
                 var findInterlocutorResult = await _usersService.GetBySecurityId(interlocutorId);
                 if (findInterlocutorResult.IsFailure) return findInterlocutorResult;
             }
+
 
             List<Guid> interlocutors = new List<Guid>(interlocutorsId);
             interlocutors.Add(creatorId);
@@ -77,22 +80,30 @@ namespace NoTelegram.Application.Services
             return Result.Success();
         }
 
-        public async Task<Result> SendMessage(Guid senderId, Guid chatId, string messageType, string message)
+        public async Task<Result> SendMessage(Guid senderId, Guid chatId, string messageType, string messageText)
         {
             var findSenderResult = await _usersService.GetBySecurityId(senderId);
             if (findSenderResult.IsFailure) return findSenderResult;
 
             Chats? chat = await _chatsRepository.GetById(chatId);
             if (chat is null) return Result.Failure($"Нет чата с id: {chatId}");
+            //TODO: проверка прав и доступа
 
-
-
+            Messages message = await _messagesService.Create(senderId, chatId, messageType, messageText);
+            
             return Result.Success();
         }
 
-        public Task ReadMessages(Guid securityId, Guid chatId, int pageNumber, int pageSize)
+        public async Task<Result<List<Messages>>> ReadMessages(Guid readerId, Guid chatId, int pageNumber, int pageSize)
         {
-            throw new NotImplementedException();
+            var findSenderResult = await _usersService.GetBySecurityId(readerId);
+            if (findSenderResult.IsFailure) return Result.Failure<List<Messages>>(findSenderResult.Error);
+
+            Chats? chat = await _chatsRepository.GetById(chatId);
+            if (chat is null) return Result.Failure<List<Messages>>($"Нет чата с id: {chatId}");
+            //TODO: проверка прав и доступа
+            //TODO: пагинация
+            return Result.Success(chat.Messages);
         }
 
         private AccessType GetAccessType(string accessType)
@@ -103,17 +114,6 @@ namespace NoTelegram.Application.Services
                 "pb" => AccessType.PieceBlock,
                 "f" => AccessType.Free,
                 _ => throw new InvalidDataException($"{accessType} is not {nameof(AccessType)}")
-            };
-        }
-
-        private MessageType GetMessageType(string messageType)
-        {
-            return messageType switch
-            {
-                "text" => MessageType.Text,
-                "photo" => MessageType.Photo,
-                "video" => MessageType.Video,
-                _ => throw new InvalidDataException($"{messageType} is not {nameof(MessageType)}")
             };
         }
     }

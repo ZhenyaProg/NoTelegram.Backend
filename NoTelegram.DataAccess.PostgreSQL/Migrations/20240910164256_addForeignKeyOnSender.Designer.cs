@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NoTelegram.DataAccess.PostgreSQL;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace NoTelegram.DataAccess.PostgreSQL.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    partial class DataBaseContextModelSnapshot : ModelSnapshot
+    [Migration("20240910164256_addForeignKeyOnSender")]
+    partial class addForeignKeyOnSender
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,9 +84,14 @@ namespace NoTelegram.DataAccess.PostgreSQL.Migrations
                     b.Property<int>("MessageType")
                         .HasColumnType("integer");
 
+                    b.Property<Guid>("SenderId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("MessageId");
 
                     b.HasIndex("ChatId");
+
+                    b.HasIndex("SenderId");
 
                     b.ToTable("Messages");
                 });
@@ -143,10 +151,23 @@ namespace NoTelegram.DataAccess.PostgreSQL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("NoTelegram.DataAccess.PostgreSQL.Entities.UsersEntity", "Sender")
+                        .WithMany("Messages")
+                        .HasForeignKey("SenderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Chat");
+
+                    b.Navigation("Sender");
                 });
 
             modelBuilder.Entity("NoTelegram.DataAccess.PostgreSQL.Entities.ChatsEntity", b =>
+                {
+                    b.Navigation("Messages");
+                });
+
+            modelBuilder.Entity("NoTelegram.DataAccess.PostgreSQL.Entities.UsersEntity", b =>
                 {
                     b.Navigation("Messages");
                 });

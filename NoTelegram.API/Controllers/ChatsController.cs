@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NoTelegram.API.Contracts.Chat;
 using NoTelegram.API.Filters.Auth;
+using NoTelegram.Core.Models;
 using NoTelegram.Core.Services;
 
 namespace NoTelegram.API.Controllers
@@ -73,11 +74,10 @@ namespace NoTelegram.API.Controllers
         public async Task<IResult> ReadMessages([FromHeader] Guid securityId,
                                                 [FromBody] ReadMessagesRequest request)
         {
-            await _chatsService.ReadMessages(securityId, request.ChatId, request.PageNumber, request.PageSize);
+            var getMessagesResult = await _chatsService.ReadMessages(securityId, request.ChatId, request.PageNumber, request.PageSize);
+            if(getMessagesResult.IsFailure) return Results.BadRequest(getMessagesResult.Error);
 
-            ReadMessagesResponse response = new ReadMessagesResponse();
-
-            return Results.Ok(response);
+            return Results.Ok(getMessagesResult.Value);
         }
     }
 }

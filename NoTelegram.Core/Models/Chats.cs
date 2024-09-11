@@ -2,7 +2,7 @@
 {
     public class Chats
     {
-        public Chats(Guid chatId, Guid creatorId, ChatType type, string chatName, AccessType chatAccess, List<Guid> interlocutors)
+        public Chats(Guid chatId, Guid creatorId, ChatType type, string chatName, AccessType chatAccess, List<Guid> interlocutors, List<Messages> messages = null)
         {
             ChatId = chatId;
             CreatorId = creatorId;
@@ -10,6 +10,7 @@
             ChatName = chatName;
             ChatAccess = chatAccess;
             Interlocutors = interlocutors;
+            Messages = messages;
         }
 
         public Guid ChatId { get; private set; }
@@ -19,7 +20,8 @@
         public AccessType ChatAccess { get; private set; }
         public ChatType Type { get; private set; }
 
-        public List<Guid> Interlocutors { get; private set; } = new List<Guid>();
+        public List<Guid> Interlocutors { get; private set; } = [];
+        public List<Messages> Messages { get; private set; } = [];
     }
 
     public enum AccessType

@@ -35,7 +35,11 @@ namespace NoTelegram.DataAccess.PostgreSQL.Repositories
             if(chatsEntity is null) return null;
 
             return new Chats(id, chatsEntity.CreatorId, chatsEntity.Type, chatsEntity.ChatName, chatsEntity.ChatAccess,
-                             chatsEntity.Interlocutors.Select(s => s.SecurityId).ToList());
+                             chatsEntity.Interlocutors.Select(s => s.SecurityId).ToList(),
+                             chatsEntity.Messages.Select(entity => new Messages(entity.MessageId, 
+                                                                                entity.ChatId,
+                                                                                entity.MessageType,
+                                                                                entity.MessageText)).ToList());
         }
     }
 }

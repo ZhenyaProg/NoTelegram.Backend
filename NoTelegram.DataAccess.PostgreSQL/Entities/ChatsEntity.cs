@@ -12,5 +12,6 @@ namespace NoTelegram.DataAccess.PostgreSQL.Entities
         public ChatType Type { get; set; }
 
         public List<UsersEntity> Interlocutors { get; set; } = [];
+        public List<MessagesEntity> Messages { get; set; } = [];
     }
 }
