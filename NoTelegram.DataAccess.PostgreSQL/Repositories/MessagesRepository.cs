@@ -24,9 +24,10 @@ namespace NoTelegram.DataAccess.PostgreSQL.Repositories
                 MessageText = message.MessageText,
             };
 
-            var chat = await _dbContext.Chats.FirstAsync(chat => chat.ChatId == message.ChatId);
-            chat.Messages.Add(messagesEntity);
+            //var chat = await _dbContext.Chats.FirstAsync(chat => chat.ChatId == message.ChatId);
+            //chat.Messages.Add(messagesEntity);
 
+            await _dbContext.Messages.AddAsync(messagesEntity);
             await _dbContext.SaveChangesAsync();
         }
     }

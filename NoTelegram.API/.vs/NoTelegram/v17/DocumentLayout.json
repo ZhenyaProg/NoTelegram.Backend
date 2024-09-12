@@ -3,14 +3,18 @@
   "WorkspaceRootPath": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BBD88C4D-6B71-4A96-846B-A93FF076CECD}|..\\NoTelegram.Application\\NoTelegram.Application.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.application\\services\\chatsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1582B76B-44E3-42CE-A38F-85F17806D856}|..\\NoTelegram.DataAccess.PostgreSQL\\NoTelegram.DataAccess.PostgreSQL.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.dataaccess.postgresql\\configuractions\\messagesconfiguraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C62113D0-4B96-4EF3-8A40-B6999380E74C}|..\\NoTelegram.Core\\NoTelegram.Core.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.core\\services\\ichatsservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1582B76B-44E3-42CE-A38F-85F17806D856}|..\\NoTelegram.DataAccess.PostgreSQL\\NoTelegram.DataAccess.PostgreSQL.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.dataaccess.postgresql\\configuractions\\chatsconfiguraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.api\\controllers\\chatscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|solutionrelative:controllers\\chatscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{598594D9-8C01-4C4C-A176-A70509951589}|NoTelegram.API.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1582B76B-44E3-42CE-A38F-85F17806D856}|..\\NoTelegram.DataAccess.PostgreSQL\\NoTelegram.DataAccess.PostgreSQL.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.dataaccess.postgresql\\repositories\\messagesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -19,16 +23,13 @@
       "AbsoluteMoniker": "D:0:0:{1582B76B-44E3-42CE-A38F-85F17806D856}|..\\NoTelegram.DataAccess.PostgreSQL\\NoTelegram.DataAccess.PostgreSQL.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.dataaccess.postgresql\\repositories\\chatsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C62113D0-4B96-4EF3-8A40-B6999380E74C}|..\\NoTelegram.Core\\NoTelegram.Core.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.core\\repositories\\imessagesrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1582B76B-44E3-42CE-A38F-85F17806D856}|..\\NoTelegram.DataAccess.PostgreSQL\\NoTelegram.DataAccess.PostgreSQL.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.dataaccess.postgresql\\entities\\chatsentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C62113D0-4B96-4EF3-8A40-B6999380E74C}|..\\NoTelegram.Core\\NoTelegram.Core.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.core\\models\\chats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1582B76B-44E3-42CE-A38F-85F17806D856}|..\\NoTelegram.DataAccess.PostgreSQL\\NoTelegram.DataAccess.PostgreSQL.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.dataaccess.postgresql\\entities\\usersentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1582B76B-44E3-42CE-A38F-85F17806D856}|..\\NoTelegram.DataAccess.PostgreSQL\\NoTelegram.DataAccess.PostgreSQL.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.dataaccess.postgresql\\configuractions\\chatsconfiguraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1582B76B-44E3-42CE-A38F-85F17806D856}|..\\NoTelegram.DataAccess.PostgreSQL\\NoTelegram.DataAccess.PostgreSQL.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.dataaccess.postgresql\\configuractions\\messagesconfiguraction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1582B76B-44E3-42CE-A38F-85F17806D856}|..\\NoTelegram.DataAccess.PostgreSQL\\NoTelegram.DataAccess.PostgreSQL.csproj|f:\\c# projects\\notelegram\\backend\\notelegram.dataaccess.postgresql\\entities\\messagesentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +39,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,28 +47,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "MessagesRepository.cs",
               "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\MessagesRepository.cs",
               "RelativeDocumentMoniker": "..\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\MessagesRepository.cs",
               "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\MessagesRepository.cs",
               "RelativeToolTip": "..\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\MessagesRepository.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABwAAAAAAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAQwBwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T11:12:35.595Z",
+              "WhenOpened": "2024-09-12T10:25:32.042Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IMessagesRepository.cs",
-              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Core\\Repositories\\IMessagesRepository.cs",
-              "RelativeDocumentMoniker": "..\\NoTelegram.Core\\Repositories\\IMessagesRepository.cs",
-              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Core\\Repositories\\IMessagesRepository.cs",
-              "RelativeToolTip": "..\\NoTelegram.Core\\Repositories\\IMessagesRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAjAAAA",
+              "DocumentIndex": 3,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T11:07:59.058Z",
+              "WhenOpened": "2024-09-12T10:23:59.64Z",
               "EditorCaption": ""
             },
             {
@@ -78,66 +79,27 @@
               "RelativeDocumentMoniker": "Controllers\\ChatsController.cs",
               "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.API\\Controllers\\ChatsController.cs",
               "RelativeToolTip": "Controllers\\ChatsController.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAIwEwAAABEAAAA",
+              "ViewState": "AQIAADsAAAAAAAAAAAAIwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T11:06:13.643Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Chats.cs",
-              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Core\\Models\\Chats.cs",
-              "RelativeDocumentMoniker": "..\\NoTelegram.Core\\Models\\Chats.cs",
-              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Core\\Models\\Chats.cs",
-              "RelativeToolTip": "..\\NoTelegram.Core\\Models\\Chats.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAACQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T11:01:38.548Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IChatsService.cs",
-              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Core\\Services\\IChatsService.cs",
-              "RelativeDocumentMoniker": "..\\NoTelegram.Core\\Services\\IChatsService.cs",
-              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Core\\Services\\IChatsService.cs",
-              "RelativeToolTip": "..\\NoTelegram.Core\\Services\\IChatsService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T10:56:53.766Z",
+              "WhenOpened": "2024-09-12T10:23:58.271Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ChatsService.cs",
-              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Application\\Services\\ChatsService.cs",
-              "RelativeDocumentMoniker": "..\\NoTelegram.Application\\Services\\ChatsService.cs",
-              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.Application\\Services\\ChatsService.cs",
-              "RelativeToolTip": "..\\NoTelegram.Application\\Services\\ChatsService.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAYwGgAAAAdAAAA",
+              "Title": "MessagesConfiguraction.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\MessagesConfiguraction.cs",
+              "RelativeDocumentMoniker": "..\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\MessagesConfiguraction.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\MessagesConfiguraction.cs",
+              "RelativeToolTip": "..\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\MessagesConfiguraction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T10:56:04.277Z",
+              "WhenOpened": "2024-09-12T10:21:46.445Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ChatsRepository.cs",
-              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\ChatsRepository.cs",
-              "RelativeDocumentMoniker": "..\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\ChatsRepository.cs",
-              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\ChatsRepository.cs",
-              "RelativeToolTip": "..\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\ChatsRepository.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAAwCQAAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T10:55:55.789Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 1,
               "Title": "ChatsConfiguraction.cs",
               "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\ChatsConfiguraction.cs",
               "RelativeDocumentMoniker": "..\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\ChatsConfiguraction.cs",
@@ -145,20 +107,59 @@
               "RelativeToolTip": "..\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\ChatsConfiguraction.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T10:55:36.541Z",
+              "WhenOpened": "2024-09-12T10:21:33.108Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "MessagesConfiguraction.cs",
-              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\MessagesConfiguraction.cs",
-              "RelativeDocumentMoniker": "..\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\MessagesConfiguraction.cs",
-              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\MessagesConfiguraction.cs",
-              "RelativeToolTip": "..\\NoTelegram.DataAccess.PostgreSQL\\Configuractions\\MessagesConfiguraction.cs",
+              "Title": "MessagesEntity.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Entities\\MessagesEntity.cs",
+              "RelativeDocumentMoniker": "..\\NoTelegram.DataAccess.PostgreSQL\\Entities\\MessagesEntity.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Entities\\MessagesEntity.cs",
+              "RelativeToolTip": "..\\NoTelegram.DataAccess.PostgreSQL\\Entities\\MessagesEntity.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-11T10:55:34.02Z",
+              "WhenOpened": "2024-09-12T10:21:25.716Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UsersEntity.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Entities\\UsersEntity.cs",
+              "RelativeDocumentMoniker": "..\\NoTelegram.DataAccess.PostgreSQL\\Entities\\UsersEntity.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Entities\\UsersEntity.cs",
+              "RelativeToolTip": "..\\NoTelegram.DataAccess.PostgreSQL\\Entities\\UsersEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T10:21:20.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ChatsEntity.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Entities\\ChatsEntity.cs",
+              "RelativeDocumentMoniker": "..\\NoTelegram.DataAccess.PostgreSQL\\Entities\\ChatsEntity.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Entities\\ChatsEntity.cs",
+              "RelativeToolTip": "..\\NoTelegram.DataAccess.PostgreSQL\\Entities\\ChatsEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-12T10:21:15.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ChatsRepository.cs",
+              "DocumentMoniker": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\ChatsRepository.cs",
+              "RelativeDocumentMoniker": "..\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\ChatsRepository.cs",
+              "ToolTip": "F:\\C# Projects\\NoTelegram\\Backend\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\ChatsRepository.cs",
+              "RelativeToolTip": "..\\NoTelegram.DataAccess.PostgreSQL\\Repositories\\ChatsRepository.cs",
+              "ViewState": "AQIAABAAAAAAAAAAAAAuwCIAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-11T10:55:55.789Z",
               "EditorCaption": ""
             }
           ]

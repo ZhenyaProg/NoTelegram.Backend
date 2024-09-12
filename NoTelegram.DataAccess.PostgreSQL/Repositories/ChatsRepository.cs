@@ -31,7 +31,11 @@ namespace NoTelegram.DataAccess.PostgreSQL.Repositories
 
         public async Task<Chats?> GetById(Guid id)
         {
-            ChatsEntity? chatsEntity = await _dbContext.Chats.FirstOrDefaultAsync(chat => chat.ChatId == id);
+            ChatsEntity? chatsEntity = await _dbContext.Chats
+                .AsNoTracking()
+                .Include(chat => chat.Messages)
+                .Include(chat => chat.Interlocutors)
+                .FirstOrDefaultAsync(chat => chat.ChatId == id);
             if(chatsEntity is null) return null;
 
             return new Chats(id, chatsEntity.CreatorId, chatsEntity.Type, chatsEntity.ChatName, chatsEntity.ChatAccess,

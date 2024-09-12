@@ -14,6 +14,10 @@ namespace NoTelegram.DataAccess.PostgreSQL.Configuractions
                 .HasOne(message => message.Chat)
                 .WithMany(chat => chat.Messages)
                 .HasForeignKey(message => message.ChatId);
+
+            builder
+                .Property(message => message.MessageType)
+                .HasConversion<string>();
         }
     }
 }
